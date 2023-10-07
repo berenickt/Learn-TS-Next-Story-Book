@@ -1,7 +1,7 @@
 interface User {
-  name: string;
-  age: number;
-  email: string;
+  name: string
+  age: number
+  email: string
 }
 type UserKey = keyof User // 'name' | 'age' | 'email' 라는 Union 타입이 된다.
 
@@ -17,7 +17,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
 const user: User = {
   name: 'Hana',
   age: 36,
-  email: 'test@example.com'
+  email: 'test@example.com',
 }
 
 // name은 타입의 키로 존재하기 때문에 올바르게 string 타입의 값을 반환한다.

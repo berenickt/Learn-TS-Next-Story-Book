@@ -1,6 +1,6 @@
 type User = {
-  name: string;
-  gender: string;
+  name: string
+  gender: string
 }
 
 type UserReadonly = Readonly<User>

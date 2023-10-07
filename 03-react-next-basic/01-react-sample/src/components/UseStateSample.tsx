@@ -16,7 +16,7 @@ const Counter = (props: CounterProps) => {
       <p>Count: {count}</p>
       {/* setCount를 호출해서 상태를 업데이트한다 */}
       <button onClick={() => setCount(count - 1)}>-</button>
-      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
     </div>
   )
 }

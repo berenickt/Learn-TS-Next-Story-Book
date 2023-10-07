@@ -7,7 +7,7 @@ type ContainerProps = {
   title: string
 }
 
-const Container: React.FC<ContainerProps> = (props) => {
+const Container: React.FC<ContainerProps> = props => {
   const { title, children } = props
 
   return (

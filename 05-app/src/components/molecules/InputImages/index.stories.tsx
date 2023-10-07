@@ -3,9 +3,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import InputImages, { FileData } from '.'
 
-export default { title: 'Molecules/InputImages' } as ComponentMeta<
-  typeof InputImages
->
+export default { title: 'Molecules/InputImages' } as ComponentMeta<typeof InputImages>
 
 const Container = styled.div`
   width: 288px;

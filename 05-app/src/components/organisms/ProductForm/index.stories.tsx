@@ -13,7 +13,5 @@ export default {
   },
 } as ComponentMeta<typeof ProductForm>
 
-const Template: ComponentStory<typeof ProductForm> = (args) => (
-  <ProductForm {...args} />
-)
+const Template: ComponentStory<typeof ProductForm> = args => <ProductForm {...args} />
 export const Form = Template.bind({})

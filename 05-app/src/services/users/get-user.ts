@@ -14,10 +14,7 @@ export type GetUserParams = {
  * @param params 파라미터
  * @returns 사용자
  */
-const getUser = async (
-  context: ApiContext,
-  { id }: GetUserParams,
-): Promise<User> => {
+const getUser = async (context: ApiContext, { id }: GetUserParams): Promise<User> => {
   /**
   // 사용자 API
   // 샘플 응답
@@ -30,15 +27,12 @@ const getUser = async (
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
   }
    */
-  return await fetcher(
-    `${context.apiRootUrl.replace(/\/$/g, '')}/users/${id}`,
-    {
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
+  return await fetcher(`${context.apiRootUrl.replace(/\/$/g, '')}/users/${id}`, {
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
-  )
+  })
 }
 
 export default getUser

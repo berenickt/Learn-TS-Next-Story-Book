@@ -1,6 +1,6 @@
 type User = {
-  readonly name: string;
-  readonly gender: string;
+  readonly name: string
+  readonly gender: string
 }
 
 let user: User = { name: 'Hana', gender: 'Male' }

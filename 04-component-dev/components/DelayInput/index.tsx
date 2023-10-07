@@ -40,7 +40,7 @@ export const DelayInput = (props: DelayButtonProps) => {
         onChange(e)
       }, 1000)
     },
-    [onChange]
+    [onChange],
   )
 
   // span에 표시하는 텍스트
@@ -49,8 +49,8 @@ export const DelayInput = (props: DelayButtonProps) => {
   return (
     <div>
       {/* data-testid는 테스트 안에서만 사용하는 ID */}
-      <input data-testid='input-text' value={inputValue} onChange={handleChange} />
-      <span data-testid='display-text'>{text}</span>
+      <input data-testid="input-text" value={inputValue} onChange={handleChange} />
+      <span data-testid="display-text">{text}</span>
     </div>
   )
 }

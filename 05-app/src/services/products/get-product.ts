@@ -14,20 +14,14 @@ export type GetProductParams = {
  * @param params 상품 ID
  * @returns 상품
  */
-const getProduct = async (
-  context: ApiContext,
-  { id }: GetProductParams,
-): Promise<Product> => {
-  return await fetcher(
-    `${context.apiRootUrl.replace(/\/$/g, '')}/products/${id}`,
-    {
-      headers: {
-        Origin: '*',
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
+const getProduct = async (context: ApiContext, { id }: GetProductParams): Promise<Product> => {
+  return await fetcher(`${context.apiRootUrl.replace(/\/$/g, '')}/products/${id}`, {
+    headers: {
+      Origin: '*',
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
-  )
+  })
 }
 
 export default getProduct

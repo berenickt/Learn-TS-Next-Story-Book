@@ -1,14 +1,14 @@
 // 옵셔널 속성으로 info를 정의한다
 type User = {
   info?: {
-    name: string;
-    age: number;
+    name: string
+    age: number
   }
 }
 
 let response = {}
 // response는 JSON 형식의 API 응답이 대입되어 있다고 가정한다. User에 타입 어서션을 한다.
-const user = (response as any) as User
+const user = response as any as User
 
 // 옵셔널 속성에 대한 타입 가드를 수행한다.
 if (user.info) {

@@ -25,21 +25,13 @@ type BadgeIconButton = {
 /**
  * 배지가 달린 아이콘 버튼
  */
-const BadgeIconButton = ({
-  icon,
-  size = '24px',
-  badgeContent,
-  badgeBackgroundColor,
-}: BadgeIconButton) => {
+const BadgeIconButton = ({ icon, size = '24px', badgeContent, badgeBackgroundColor }: BadgeIconButton) => {
   return (
     <BadgeIconButtonWrapper size={size}>
       {icon}
       {badgeContent && (
         <BadgeWrapper data-testid="badge-wrapper">
-          <Badge
-            content={`${badgeContent}`}
-            backgroundColor={badgeBackgroundColor}
-          />
+          <Badge content={`${badgeContent}`} backgroundColor={badgeBackgroundColor} />
         </BadgeWrapper>
       )}
     </BadgeIconButtonWrapper>

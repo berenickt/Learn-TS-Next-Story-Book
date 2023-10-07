@@ -19,13 +19,7 @@ type FilterGroupProps = {
 /**
  * 필터 그롭
  */
-const FilterGroup = ({
-  title,
-  items,
-  value = [],
-  defaultValue = [],
-  onChange,
-}: FilterGroupProps) => {
+const FilterGroup = ({ title, items, value = [], defaultValue = [], onChange }: FilterGroupProps) => {
   const [selected, setSelected] = useState(value ?? defaultValue)
 
   useEffect(() => {
@@ -35,9 +29,7 @@ const FilterGroup = ({
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const value = e.target.name
-      const newSelected = e.target.checked
-        ? [...selected, value]
-        : selected.filter((v) => v !== value)
+      const newSelected = e.target.checked ? [...selected, value] : selected.filter(v => v !== value)
 
       setSelected(newSelected)
       onChange && onChange(newSelected)
@@ -53,12 +45,7 @@ const FilterGroup = ({
       <Box marginTop={2}>
         {items.map(({ label, name }, i) => (
           <Box key={i} marginTop={i === 0 ? 0 : '4px'}>
-            <CheckBox
-              name={name}
-              label={label}
-              checked={!!selected.find((e) => e === name)}
-              onChange={handleChange}
-            />
+            <CheckBox name={name} label={label} checked={!!selected.find(e => e === name)} onChange={handleChange} />
           </Box>
         ))}
       </Box>

@@ -1,9 +1,4 @@
-import type {
-  GetStaticPaths,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
-  NextPage,
-} from 'next'
+import type { GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import BreadcrumbItem from 'components/atoms/BreadcrumbItem'
@@ -21,11 +16,7 @@ import type { ApiContext } from 'types'
 
 type UserPageProps = InferGetStaticPropsType<typeof getStaticProps>
 
-const UserPage: NextPage<UserPageProps> = ({
-  id,
-  user,
-  products,
-}: UserPageProps) => {
+const UserPage: NextPage<UserPageProps> = ({ id, user, products }: UserPageProps) => {
   const router = useRouter()
 
   if (router.isFallback) {
@@ -80,7 +71,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     apiRootUrl: process.env.API_BASE_URL || 'http://localhost:5000',
   }
   const users = await getAllUsers(context)
-  const paths = users.map((u) => `/users/${u.id}`)
+  const paths = users.map(u => `/users/${u.id}`)
 
   return { paths, fallback: true }
 }
@@ -97,10 +88,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext) => {
   // 사용자 정보와 사용자가 소유한 상품을 얻고, 정적 페이지를 생성한다
   // 10초 동안 revalidate 상태로 하고, 정적 페이지를 업데이트한다
   const userId = Number(params.id)
-  const [user, products] = await Promise.all([
-    getUser(context, { id: userId }),
-    getAllProducts(context, { userId }),
-  ])
+  const [user, products] = await Promise.all([getUser(context, { id: userId }), getAllProducts(context, { userId })])
 
   return {
     props: {

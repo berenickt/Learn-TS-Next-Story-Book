@@ -28,9 +28,7 @@ const categoryNameDict: Record<Category, string> = {
 const SearchPage: NextPage = () => {
   const router = useRouter()
   // 상품 카테고리를 쿼리로부터 얻는다
-  const slug: Category[] = Array.isArray(router.query.slug)
-    ? (router.query.slug as Category[])
-    : []
+  const slug: Category[] = Array.isArray(router.query.slug) ? (router.query.slug as Category[]) : []
   // 상품 상태를 쿼리로부터 얻는다
   const conditions = (() => {
     if (Array.isArray(router.query.condition)) {
@@ -87,11 +85,7 @@ const SearchPage: NextPage = () => {
               </BreadcrumbItem>
             ))}
             {slug.length == 0 && <BreadcrumbItem>모두</BreadcrumbItem>}
-            {slug.length > 0 && (
-              <BreadcrumbItem>
-                {categoryNameDict[slug[slug.length - 1]] ?? 'Unknown'}
-              </BreadcrumbItem>
-            )}
+            {slug.length > 0 && <BreadcrumbItem>{categoryNameDict[slug[slug.length - 1]] ?? 'Unknown'}</BreadcrumbItem>}
           </Breadcrumb>
         </Box>
         <Flex>
@@ -117,26 +111,17 @@ const SearchPage: NextPage = () => {
                   </Link>
                 </Box>
                 {/* 카테고리 링크 */}
-                {Object.keys(categoryNameDict).map(
-                  (category: string, i: number) => (
-                    <Box key={i} marginTop={1}>
-                      <Link href={`/search/${category}`} passHref>
-                        <Anchor as="a">
-                          {categoryNameDict[category as Category]}
-                        </Anchor>
-                      </Link>
-                    </Box>
-                  ),
-                )}
+                {Object.keys(categoryNameDict).map((category: string, i: number) => (
+                  <Box key={i} marginTop={1}>
+                    <Link href={`/search/${category}`} passHref>
+                      <Anchor as="a">{categoryNameDict[category as Category]}</Anchor>
+                    </Link>
+                  </Box>
+                ))}
               </Box>
             </Box>
             <Box>
-              <Text
-                as="h2"
-                display={{ base: 'block', md: 'none' }}
-                fontWeight="bold"
-                variant="mediumLarge"
-              >
+              <Text as="h2" display={{ base: 'block', md: 'none' }} fontWeight="bold" variant="mediumLarge">
                 상품 목록
               </Text>
               {/*

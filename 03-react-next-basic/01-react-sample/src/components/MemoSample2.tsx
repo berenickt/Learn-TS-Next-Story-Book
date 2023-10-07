@@ -22,7 +22,7 @@ type BuzzProps = {
   onClick: () => void
 }
 
-const Buzz = memo<BuzzProps>((props) => {
+const Buzz = memo<BuzzProps>(props => {
   const { isBuzz, onClick } = props
   console.log(`Buzz가 다시 그려졌습니다. izBuzz=${isBuzz}`)
   return <span onClick={onClick}>{isBuzz ? 'Buzz' : ''}</span>
@@ -41,7 +41,7 @@ const Parent = () => {
 
   return (
     <div>
-      <button onClick={() => setCount((c) => c + 1)}>+1</button>
+      <button onClick={() => setCount(c => c + 1)}>+1</button>
       <p>{`현재 카운트: ${count}`}</p>
       <p>
         <Fizz isFizz={isFizz} />

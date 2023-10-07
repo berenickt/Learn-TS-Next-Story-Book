@@ -47,9 +47,7 @@ export default {
   },
 } as ComponentMeta<typeof CartProduct>
 
-const Template: ComponentStory<typeof CartProduct> = (args) => (
-  <CartProduct {...args} />
-)
+const Template: ComponentStory<typeof CartProduct> = args => <CartProduct {...args} />
 
 export const NiceShoes = Template.bind({})
 NiceShoes.args = {

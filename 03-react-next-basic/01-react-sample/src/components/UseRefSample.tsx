@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 const UPLOAD_DELAY = 5000
 
@@ -45,8 +45,8 @@ const ImageUploader = () => {
       </p>
       <input
         ref={inputImageRef}
-        type='file'
-        accept='image/*'
+        type="file"
+        accept="image/*"
         onChange={onChangeImage}
         style={{ visibility: 'hidden' }}
       />

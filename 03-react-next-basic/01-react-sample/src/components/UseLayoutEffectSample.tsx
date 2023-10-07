@@ -57,11 +57,11 @@ const Clock = () => {
   return (
     <div>
       <p>
-        <span id='current-time-label'>현재 시각</span>
+        <span id="current-time-label">현재 시각</span>
         <span>:{timestamp.toLocaleString(locale)}</span>
-        <select value={locale} onChange={(e) => setLocale(getLocaleFromString(e.target.value))}>
-          <option value='en-US'>en-US</option>
-          <option value='ko-KR'>ko-KR</option>
+        <select value={locale} onChange={e => setLocale(getLocaleFromString(e.target.value))}>
+          <option value="en-US">en-US</option>
+          <option value="ko-KR">ko-KR</option>
         </select>
       </p>
     </div>

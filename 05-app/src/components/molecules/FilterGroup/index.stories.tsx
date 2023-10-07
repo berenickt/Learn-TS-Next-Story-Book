@@ -28,7 +28,7 @@ export default {
   },
 } as ComponentMeta<typeof FilterGroup>
 
-const Template: ComponentStory<typeof FilterGroup> = (args) => {
+const Template: ComponentStory<typeof FilterGroup> = args => {
   const [value, setValue] = useState<string[]>([])
   const handleChange = (value: string[]) => {
     setValue(value)

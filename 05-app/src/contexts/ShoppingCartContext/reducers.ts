@@ -30,7 +30,7 @@ const addProductToCart = (product: Product, state: Product[]) => {
  * @returns 다음 상태
  */
 const removeProductFromCart = (productId: number, state: Product[]) => {
-  const removedItemIndex = state.findIndex((item) => item.id === productId)
+  const removedItemIndex = state.findIndex(item => item.id === productId)
 
   state.splice(removedItemIndex, 1)
 

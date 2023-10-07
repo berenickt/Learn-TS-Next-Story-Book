@@ -21,7 +21,7 @@ export default {
   },
 } as ComponentMeta<typeof Badge>
 
-const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />
+const Template: ComponentStory<typeof Badge> = args => <Badge {...args} />
 
 export const Orange = Template.bind({})
 Orange.args = { content: '1', backgroundColor: '#ed9f28' }

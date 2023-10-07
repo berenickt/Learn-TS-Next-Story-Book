@@ -1,10 +1,4 @@
-import {
-  render,
-  act,
-  screen,
-  fireEvent,
-  RenderResult,
-} from '@testing-library/react'
+import { render, act, screen, fireEvent, RenderResult } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import SigninForm from '.'
 import { theme } from 'themes'
@@ -31,14 +25,10 @@ describe('SigninForm', () => {
     // DOM이 변경되는 것을 보증, React Hook Form의 handleSubmit이 호출될 때까지 대기한다
     await act(async () => {
       // 사용자명 입력
-      const inputUsernameNode = screen.getByPlaceholderText(
-        /사용자명/,
-      ) as HTMLInputElement
+      const inputUsernameNode = screen.getByPlaceholderText(/사용자명/) as HTMLInputElement
       fireEvent.change(inputUsernameNode, { target: { value: 'user' } })
       // 비밀번호 입력
-      const inputPasswordNode = screen.getByPlaceholderText(
-        /비밀번호/,
-      ) as HTMLInputElement
+      const inputPasswordNode = screen.getByPlaceholderText(/비밀번호/) as HTMLInputElement
       fireEvent.change(inputPasswordNode, { target: { value: 'password' } })
       // 로그인 버튼을 클릭
       fireEvent.click(screen.getByText('로그인'))
@@ -52,9 +42,7 @@ describe('SigninForm', () => {
     // DOM기 업데이트되는 것을 보증, React Hook Form의 handleSubmit이 호출될 떄까지 대기한다
     await act(async () => {
       // 사용자명 입력
-      const inputUsernameNode = screen.getByPlaceholderText(
-        /사용자명/,
-      ) as HTMLInputElement
+      const inputUsernameNode = screen.getByPlaceholderText(/사용자명/) as HTMLInputElement
       fireEvent.change(inputUsernameNode, { target: { value: 'user' } })
       // 로그인 버튼을 클릭
       fireEvent.click(screen.getByText('サインイン'))

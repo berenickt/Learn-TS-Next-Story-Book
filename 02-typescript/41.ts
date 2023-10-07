@@ -1,13 +1,13 @@
 // 머릿 글자의 I는 인터페이스임을 나타내기 위한 것이다
 interface IUser {
-  name: string;
-  age: number;
-  sayHello: () => string; // 인수 없이 문자열을 반환한다
+  name: string
+  age: number
+  sayHello: () => string // 인수 없이 문자열을 반환한다
 }
 
 class User implements IUser {
-  name: string;
-  age: number;
+  name: string
+  age: number
 
   constructor() {
     this.name = ''

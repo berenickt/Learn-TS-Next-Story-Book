@@ -56,7 +56,7 @@ interface Image {
   src?: string
 }
 
-const Template: ComponentStory<typeof ImagePreview> = (args) => {
+const Template: ComponentStory<typeof ImagePreview> = args => {
   const [files, setFiles] = useState<File[]>([])
   const [images, setImages] = useState<Image[]>([])
 
@@ -81,8 +81,8 @@ const Template: ComponentStory<typeof ImagePreview> = (args) => {
     const image = images.find((img: Image) => img.src === src)
 
     if (image !== undefined) {
-      setImages((images) => images.filter((img) => img.src !== image.src))
-      setFiles((files) => files.filter((file: File) => file !== image.file))
+      setImages(images => images.filter(img => img.src !== image.src))
+      setFiles(files => files.filter((file: File) => file !== image.file))
     }
 
     args && args.onRemove && args.onRemove(src)
@@ -90,15 +90,9 @@ const Template: ComponentStory<typeof ImagePreview> = (args) => {
 
   return (
     <Container>
-      <Dropzone value={files} onDrop={(fileList) => setFiles(fileList)} />
+      <Dropzone value={files} onDrop={fileList => setFiles(fileList)} />
       {images.map((image, i) => (
-        <ImagePreview
-          key={i}
-          src={image.src}
-          width="100px"
-          {...args}
-          onRemove={handleRemove}
-        />
+        <ImagePreview key={i} src={image.src} width="100px" {...args} onRemove={handleRemove} />
       ))}
     </Container>
   )

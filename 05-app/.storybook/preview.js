@@ -33,7 +33,7 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 // Themeの適用
-addDecorator((story) => (
+addDecorator(story => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     {story()}
@@ -41,13 +41,14 @@ addDecorator((story) => (
 ))
 
 // next/imageの差し替え
-const OriginalNextImage = NextImage.default;
+const OriginalNextImage = NextImage.default
 
 Object.defineProperty(NextImage, 'default', {
   configurable: true,
-  value: (props) => typeof props.src === 'string' ? (
-    <OriginalNextImage {...props} unoptimized blurDataURL={props.src} />
-  ) : (
-    <OriginalNextImage {...props} unoptimized />
-  ),
+  value: props =>
+    typeof props.src === 'string' ? (
+      <OriginalNextImage {...props} unoptimized blurDataURL={props.src} />
+    ) : (
+      <OriginalNextImage {...props} unoptimized />
+    ),
 })

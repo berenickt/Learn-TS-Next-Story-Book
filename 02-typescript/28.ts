@@ -1,1 +1,1 @@
-const result = (response as any) as User
+const result = response as any as User

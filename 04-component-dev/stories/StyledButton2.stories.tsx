@@ -10,25 +10,25 @@ export default {
   argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof StyledButton>
 
-export const Primary = (props) => {
+export const Primary = props => {
   return (
-    <StyledButton {...props} variant='primary'>
+    <StyledButton {...props} variant="primary">
       Primary
     </StyledButton>
   )
 }
 
-export const Success = (props) => {
+export const Success = props => {
   return (
-    <StyledButton {...props} variant='success'>
+    <StyledButton {...props} variant="success">
       Primary
     </StyledButton>
   )
 }
 
-export const Transparent = (props) => {
+export const Transparent = props => {
   return (
-    <StyledButton {...props} variant='transparent'>
+    <StyledButton {...props} variant="transparent">
       Transparent
     </StyledButton>
   )

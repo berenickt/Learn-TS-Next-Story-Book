@@ -3,6 +3,6 @@ console.log(age.length) // 에러: age는 number 타입이므로 length 속성�
 
 const user = {
   name: 'Hana',
-  age: 36
+  age: 36,
 }
 console.log(user.age.length) // 에러: age는 number 타입이므로 length 속성은 없다

@@ -52,20 +52,10 @@ const UserProfile = ({
         />
       </Box>
       <Box padding={1}>
-        <Flex
-          height="100%"
-          flexDirection="column"
-          justifyContent="space-between"
-        >
+        <Flex height="100%" flexDirection="column" justifyContent="space-between">
           <Box>
             {/* 사용자명 */}
-            <Text
-              as="p"
-              fontWeight="bold"
-              variant="mediumLarge"
-              marginTop={0}
-              marginBottom={1}
-            >
+            <Text as="p" fontWeight="bold" variant="mediumLarge" marginTop={0} marginBottom={1}>
               {username}
             </Text>
             {/* 상품 게시 수 */}

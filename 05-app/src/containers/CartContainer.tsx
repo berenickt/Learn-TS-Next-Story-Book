@@ -37,7 +37,7 @@ const CartContainer = () => {
 
   return (
     <>
-      {cart.map((p) => (
+      {cart.map(p => (
         <CartProduct
           key={p.id}
           id={p.id}

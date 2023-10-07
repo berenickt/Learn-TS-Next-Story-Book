@@ -1,5 +1,5 @@
 class Point3D extends Point {
-  z: number;
+  z: number
 
   constructor(x: number = 0, y: number = 0, z: number = 0) {
     // 상속원의 생성자를 호출한다

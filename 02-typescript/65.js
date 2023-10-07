@@ -1,3 +1,3 @@
-exports.hello = function(name) {
+exports.hello = function (name) {
   console.log(`Hello, ${name}`)
 }

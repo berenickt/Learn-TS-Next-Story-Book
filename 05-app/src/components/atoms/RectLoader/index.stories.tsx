@@ -23,8 +23,6 @@ export default {
   },
 } as ComponentMeta<typeof RectLoader>
 
-const Template: ComponentStory<typeof RectLoader> = (args) => (
-  <RectLoader {...args} />
-)
+const Template: ComponentStory<typeof RectLoader> = args => <RectLoader {...args} />
 
 export const Normal = Template.bind({})

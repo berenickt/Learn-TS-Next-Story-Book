@@ -11,11 +11,7 @@ import { ApiContext, Product } from 'types'
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>
 
-const HomePage: NextPage<HomePageProps> = ({
-  bookProducts,
-  clothesProducts,
-  shoesProducts,
-}: HomePageProps) => {
+const HomePage: NextPage<HomePageProps> = ({ bookProducts, clothesProducts, shoesProducts }: HomePageProps) => {
   // 상품 카드 캐러셀을 렌더링
   const renderProductCardCarousel = (products: Product[]) => {
     return (
@@ -50,7 +46,7 @@ const HomePage: NextPage<HomePageProps> = ({
         >
           <Box width="100%">
             <Text as="h1" marginBottom={0} color="white" variant="extraLarge">
-              Wiki C2C에서 
+              Wiki C2C에서
             </Text>
             <Text as="h1" marginTop={0} color="white" variant="extraLarge">
               마음에 드는 아이템을 찾자
@@ -58,7 +54,8 @@ const HomePage: NextPage<HomePageProps> = ({
           </Box>
           <Box width="100%">
             <Text as="p" color="white" variant="mediumLarge">
-              Wiki C2C는 실전적인 Next.js 애플리케이션 개발에서 사용되는 데모 애플리케이션입니다. 목 서버를 사용하고 있습니다. 소스 코드는 
+              Wiki C2C는 실전적인 Next.js 애플리케이션 개발에서 사용되는 데모 애플리케이션입니다. 목 서버를 사용하고
+              있습니다. 소스 코드는
               <Text
                 as="a"
                 style={{ textDecoration: 'underline' }}
@@ -78,11 +75,7 @@ const HomePage: NextPage<HomePageProps> = ({
         </Flex>
       </Flex>
       <Flex paddingBottom={2} justifyContent="center">
-        <Box
-          paddingLeft={{ base: 2, md: 0 }}
-          paddingRight={{ base: 2, md: 0 }}
-          width={{ base: '100%', md: '1040px' }}
-        >
+        <Box paddingLeft={{ base: 2, md: 0 }} paddingRight={{ base: 2, md: 0 }} width={{ base: '100%', md: '1040px' }}>
           <Box marginBottom={3}>
             <Text as="h2" variant="large">
               의류

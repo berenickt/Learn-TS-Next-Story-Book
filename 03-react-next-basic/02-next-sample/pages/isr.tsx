@@ -7,7 +7,7 @@ type ISRProps = {
 }
 
 // ISRProps를 받는 NextPage(페이지) 타입
-const ISR: NextPage<ISRProps> = (props) => {
+const ISR: NextPage<ISRProps> = props => {
   const { message } = props
 
   const router = useRouter()
@@ -21,7 +21,7 @@ const ISR: NextPage<ISRProps> = (props) => {
     <div>
       <Head>
         <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <p>이 페이지는 ISR을 통해 빌드 시 생성된 페이지입니다.</p>
@@ -31,7 +31,7 @@ const ISR: NextPage<ISRProps> = (props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<ISRProps> = async (context) => {
+export const getStaticProps: GetStaticProps<ISRProps> = async context => {
   const timestamp = new Date().toLocaleString()
   const message = `${timestamp}에 이 페이지의 getStaticProps가 실행되었습니다`
 

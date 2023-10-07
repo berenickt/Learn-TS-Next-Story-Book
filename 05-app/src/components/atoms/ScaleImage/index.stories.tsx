@@ -46,9 +46,7 @@ export default {
   },
 } as ComponentMeta<typeof ScaleImage>
 
-const Template: ComponentStory<typeof ScaleImage> = (args) => (
-  <ScaleImage {...args} />
-)
+const Template: ComponentStory<typeof ScaleImage> = args => <ScaleImage {...args} />
 
 export const Normal = Template.bind({})
 Normal.args = { src: '/images/sample/1.jpg' }

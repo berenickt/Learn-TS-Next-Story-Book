@@ -7,16 +7,13 @@ import { fetcher } from 'utils'
  * @returns 로그아웃 메시지
  */
 const signout = async (context: ApiContext): Promise<{ message: string }> => {
-  return await fetcher(
-    `${context.apiRootUrl.replace(/\/$/g, '')}/auth/signout`,
-    {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
+  return await fetcher(`${context.apiRootUrl.replace(/\/$/g, '')}/auth/signout`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
-  )
+  })
 }
 
 export default signout

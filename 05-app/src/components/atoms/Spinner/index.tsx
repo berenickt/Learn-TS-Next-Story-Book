@@ -53,11 +53,7 @@ const Spinner = (props: SpinnerProps) => {
   const { size = 50, strokeWidth = 4, isAutoCentering = false } = props
 
   return (
-    <StyledSpinner
-      size={size}
-      isAutoCentering={isAutoCentering}
-      viewBox={`0 0 ${size} ${size}`}
-    >
+    <StyledSpinner size={size} isAutoCentering={isAutoCentering} viewBox={`0 0 ${size} ${size}`}>
       <circle
         className="path"
         cx={size / 2}

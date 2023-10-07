@@ -1,6 +1,6 @@
 class Point {
-  x: number;
-  y: number;
+  x: number
+  y: number
 
   // 인수가 없는 경우의 초깃값을 지정한다
   constructor(x: number = 0, y: number = 0) {

@@ -3,11 +3,10 @@ import styled from 'styled-components'
 import { Responsive } from 'types'
 import { toPropValue } from 'utils/styles'
 
-type ScaleImageProps =
-  | Omit<ImageProps, 'quality'> & {
-      containerWidth?: Responsive<string>
-      containerHeight?: Responsive<string>
-    }
+type ScaleImageProps = Omit<ImageProps, 'quality'> & {
+  containerWidth?: Responsive<string>
+  containerHeight?: Responsive<string>
+}
 
 const ScaleEffectImageContainer = styled.div<{
   width: Responsive<string>
@@ -29,11 +28,7 @@ const ScaleEffectImage = styled(Image)`
 /**
  * 스케일 이미지
  */
-const ScaleImage = ({
-  containerWidth,
-  containerHeight,
-  ...props
-}: ScaleImageProps) => (
+const ScaleImage = ({ containerWidth, containerHeight, ...props }: ScaleImageProps) => (
   <ScaleEffectImageContainer
     width={containerWidth ?? `${props.width}` ?? '320px'}
     height={containerHeight ?? `${props.height}` ?? '320px'}

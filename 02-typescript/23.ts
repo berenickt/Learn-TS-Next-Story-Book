@@ -1,7 +1,7 @@
 function getUser() {
   return {
-     name: 'Hana',
-     age: 36
+    name: 'Hana',
+    age: 36,
   }
 }
 const user = getUser()

@@ -23,10 +23,7 @@ interface UserProductCardListContainerProps {
 /**
  * 사용자 상품 카드 리스트 컨테이너
  */
-const UserProductCardListContainer = ({
-  userId,
-  products,
-}: UserProductCardListContainerProps) => {
+const UserProductCardListContainer = ({ userId, products }: UserProductCardListContainerProps) => {
   // 사용자가 소요한 상품
   const { products: userProducts } = useSearch(context, {
     userId,
@@ -35,17 +32,12 @@ const UserProductCardListContainer = ({
 
   return (
     <ProductCardList numberPerRow={6} numberPerRowForMobile={2}>
-      {userProducts.map((p) => (
+      {userProducts.map(p => (
         <Fragment key={p.id}>
           <Link href={`/products/${p.id}`} passHref>
             <a>
               {/* 상품 카드 */}
-              <ProductCard
-                variant="small"
-                title={p.title}
-                price={p.price}
-                imageUrl={p.imageUrl}
-              />
+              <ProductCard variant="small" title={p.title} price={p.price} imageUrl={p.imageUrl} />
             </a>
           </Link>
         </Fragment>

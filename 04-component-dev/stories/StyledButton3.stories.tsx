@@ -12,16 +12,16 @@ export default {
 // increment라는 이름으로 action을 출력하기 위한 함수를 만든다
 const incrementAction = action('increment')
 
-export const Primary = (props) => {
+export const Primary = props => {
   const [count, setCount] = useState(0)
   const onClick = (e: React.MouseEvent) => {
     // 현재 계정을 전달하고, Action을 호출한다
     incrementAction(e, count)
-    setCount((c) => c + 1)
+    setCount(c => c + 1)
   }
 
   return (
-    <StyledButton {...props} variant='primary' onClick={onClick}>
+    <StyledButton {...props} variant="primary" onClick={onClick}>
       Count: {count}
     </StyledButton>
   )

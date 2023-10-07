@@ -24,10 +24,7 @@ interface ProductCardListContainerProps {
 /**
  * 상품 카드 리스트 컨테이너
  */
-const ProductCardListContainer = ({
-  category,
-  conditions,
-}: ProductCardListContainerProps) => {
+const ProductCardListContainer = ({ category, conditions }: ProductCardListContainerProps) => {
   const { products, isLoading } = useSearch(context, {
     category,
     conditions,
@@ -48,7 +45,7 @@ const ProductCardListContainer = ({
           </Box>
         ))}
       {!isLoading &&
-        products.map((p) => (
+        products.map(p => (
           <Box key={p.id}>
             <Link href={`/products/${p.id}`} passHref>
               <a>

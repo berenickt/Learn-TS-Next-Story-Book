@@ -40,10 +40,10 @@ export default function LinkSample() {
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
-      <Link href='/ssg'>
+      <Link href="/ssg">
         <a>Go TO SSG</a>
       </Link>
-      <Link href='/ssg?keyword=next'>
+      <Link href="/ssg?keyword=next">
         <a>GO TO SSG with keyword "next"</a>
       </Link>
       <Link
@@ -54,7 +54,7 @@ export default function LinkSample() {
       >
         <a>GO TO SSG with keyword "hello"</a>
       </Link>
-      <Link href='/ssg'>
+      <Link href="/ssg">
         {/* a 대신 button을 사용하면, onClick이 호출되는 시점에 이동한다 */}
         <button>Jump to SSG page</button>
       </Link>

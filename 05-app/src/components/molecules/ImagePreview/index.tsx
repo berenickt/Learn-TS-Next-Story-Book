@@ -44,13 +44,7 @@ interface ImagePreviewProps {
 /**
  * 이미지 미리보기
  */
-const ImagePreview = ({
-  src,
-  alt,
-  height,
-  width,
-  onRemove,
-}: ImagePreviewProps) => {
+const ImagePreview = ({ src, alt, height, width, onRemove }: ImagePreviewProps) => {
   // 닫기 버튼을 클릭하면 onRemove를 호출한다
   const handleCloseClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault()
@@ -64,11 +58,7 @@ const ImagePreview = ({
     <ImagePreviewContainer height={height} width={width}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt={alt} height={height} width={width} />
-      <CloseBox
-        alignItems="center"
-        justifyContent="center"
-        onClick={handleCloseClick}
-      >
+      <CloseBox alignItems="center" justifyContent="center" onClick={handleCloseClick}>
         <CloseIcon size={24} color="white" />
       </CloseBox>
     </ImagePreviewContainer>

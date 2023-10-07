@@ -9,7 +9,7 @@ const Title = () => {
   return (
     <TitleContext.Consumer>
       {/* Consumer 바로 아래 함수를 두고, Context 값을 참조한다 */}
-      {(title) => {
+      {title => {
         return <h1>{title}</h1>
       }}
     </TitleContext.Consumer>

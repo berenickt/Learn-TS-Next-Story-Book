@@ -5,14 +5,7 @@ export default {
   title: 'Atoms/Text',
   argTypes: {
     variant: {
-      options: [
-        'extraSmall',
-        'small',
-        'medium',
-        'mediumLarge',
-        'large',
-        'extraLarge',
-      ],
+      options: ['extraSmall', 'small', 'medium', 'mediumLarge', 'large', 'extraLarge'],
       control: { type: 'select' },
       defaultValue: 'medium',
       // docs에 표시할 내용을 설정
@@ -132,7 +125,7 @@ export default {
   },
 } as ComponentMeta<typeof Text>
 
-const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />
+const Template: ComponentStory<typeof Text> = args => <Text {...args} />
 
 const longText = `It is a long established fact that a reader will be
 distracted by the readable content of a page when looking at its layout.

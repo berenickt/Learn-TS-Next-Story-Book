@@ -1,10 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react'
 import BadgeIconButton from './index'
-import {
-  PersonIcon,
-  SearchIcon,
-  ShoppingCartIcon,
-} from 'components/atoms/IconButton'
+import { PersonIcon, SearchIcon, ShoppingCartIcon } from 'components/atoms/IconButton'
 
 export default {
   title: 'Molecules/BadgeIconButton',
@@ -33,9 +29,7 @@ export default {
   },
 } as ComponentMeta<typeof BadgeIconButton>
 
-const Template: ComponentStory<typeof BadgeIconButton> = (args) => (
-  <BadgeIconButton {...args} />
-)
+const Template: ComponentStory<typeof BadgeIconButton> = args => <BadgeIconButton {...args} />
 
 export const SearchBadgeIcon = Template.bind({})
 SearchBadgeIcon.args = {

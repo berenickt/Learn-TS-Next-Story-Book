@@ -1,7 +1,7 @@
 class BasePoint3D {
-  public x: number;
-  private y: number;
-  protected z: number;
+  public x: number
+  private y: number
+  protected z: number
 }
 
 // 인터페이스화 했을 떄의 접근 제어 예

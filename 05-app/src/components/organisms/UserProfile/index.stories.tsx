@@ -45,9 +45,7 @@ export default {
   },
 } as ComponentMeta<typeof UserProfile>
 
-const Template: ComponentStory<typeof UserProfile> = (args) => (
-  <UserProfile {...args} />
-)
+const Template: ComponentStory<typeof UserProfile> = args => <UserProfile {...args} />
 
 export const Small = Template.bind({})
 Small.args = {

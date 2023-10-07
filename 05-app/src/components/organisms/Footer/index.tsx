@@ -19,10 +19,7 @@ const Footer = () => {
   return (
     <footer>
       <Flex flexDirection={{ base: 'column', md: 'row' }}>
-        <Box
-          minWidth={{ base: '100%', md: '120px' }}
-          paddingRight={{ base: 0, md: 1 }}
-        >
+        <Box minWidth={{ base: '100%', md: '120px' }} paddingRight={{ base: 0, md: 1 }}>
           <nav>
             <Box marginBottom={2}>
               <Link href="/" passHref>
@@ -41,10 +38,7 @@ const Footer = () => {
             </Box>
           </nav>
         </Box>
-        <Box
-          minWidth={{ base: '100%', md: '120px' }}
-          paddingRight={{ base: 0, md: 1 }}
-        >
+        <Box minWidth={{ base: '100%', md: '120px' }} paddingRight={{ base: 0, md: 1 }}>
           <nav>
             <Box marginBottom={2}>
               <Link href="/" passHref>
@@ -65,11 +59,7 @@ const Footer = () => {
         </Box>
         <Box minWidth={{ base: '100%', md: '120px' }}>
           <nav>
-            <Anchor
-              as="a"
-              href="https://github.com/moseskim/ts-nextbook-app"
-              target="_blank"
-            >
+            <Anchor as="a" href="https://github.com/moseskim/ts-nextbook-app" target="_blank">
               <GitHubIcon size={22} />
             </Anchor>
           </nav>

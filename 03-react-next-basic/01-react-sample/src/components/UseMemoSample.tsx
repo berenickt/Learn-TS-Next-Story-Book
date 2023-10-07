@@ -12,7 +12,7 @@ const UseMemoSample = () => {
 
   // 버튼을 클릭했을 때 호출되는 함수
   const onClickButton = () => {
-    setItems((prevItems) => {
+    setItems(prevItems => {
       // 현재의 입력값을 items에 추가한다. 이때, 새로운 배열을 작성해서 저장한다
       return [...prevItems, text]
     })

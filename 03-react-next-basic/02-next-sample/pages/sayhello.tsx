@@ -7,8 +7,8 @@ export default function Sayhello() {
   useEffect(() => {
     // pages/api/hello.ts의 내용으로 요청
     fetch('api/hello')
-      .then((res) => res.json())
-      .then((profile) => {
+      .then(res => res.json())
+      .then(profile => {
         setData(profile)
       })
   }, [])

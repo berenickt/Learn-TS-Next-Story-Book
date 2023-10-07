@@ -4,4 +4,4 @@ function sayHello(name: string, greeting: string = 'Hello'): string {
 
 // 다음은 모두 문제없이 동작한다
 sayHello('Hana') // Hello Hana
-sayHello('Hana', 'Hey')　// Hey Hana
+sayHello('Hana', 'Hey') // Hey Hana

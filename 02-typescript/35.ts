@@ -1,6 +1,6 @@
 interface Point {
-  x: number;
-  y: number;
+  x: number
+  y: number
 }
 
 function printPoint(point: Point) {
@@ -10,7 +10,7 @@ function printPoint(point: Point) {
 }
 
 interface Point {
-  z: number;
+  z: number
 }
 
 // 인수의 객체에 z가 존재하지 않으므로 컴파일 시 에러가 된다

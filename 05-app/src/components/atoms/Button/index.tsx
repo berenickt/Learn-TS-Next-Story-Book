@@ -1,14 +1,7 @@
 /* eslint-disable prettier/prettier */
 import styled from 'styled-components'
 import { Responsive } from 'types'
-import {
-  toPropValue,
-  Color,
-  FontSize,
-  LetterSpacing,
-  LineHeight,
-  Space,
-} from 'utils/styles'
+import { toPropValue, Color, FontSize, LetterSpacing, LineHeight, Space } from 'utils/styles'
 
 // 버튼 변형
 export type ButtonVariant = 'primary' | 'secondary' | 'danger'
@@ -103,74 +96,50 @@ const Button = styled.button<ButtonProps>`
     // 변형 스타일 적용
     if (variant && variants[variant]) {
       const styles = []
-      !color &&
-        styles.push(toPropValue('color', variants[variant].color, theme))
-      !backgroundColor &&
-        styles.push(
-          toPropValue(
-            'background-color',
-            variants[variant].backgroundColor,
-            theme,
-          ),
-        )
+      !color && styles.push(toPropValue('color', variants[variant].color, theme))
+      !backgroundColor && styles.push(toPropValue('background-color', variants[variant].backgroundColor, theme))
       !pseudoClass &&
         styles.push(
           `&:hover {
-            ${toPropValue(
-              'background-color',
-              variants[variant].pseudoClass.hover.backgroundColor,
-              theme,
-            )}
+            ${toPropValue('background-color', variants[variant].pseudoClass.hover.backgroundColor, theme)}
           }`.replaceAll('\n', ''),
         )
       !pseudoClass &&
         styles.push(
           `&:disabled {
-            ${toPropValue(
-              'background-color',
-              variants[variant].pseudoClass.disabled.backgroundColor,
-              theme,
-            )}
+            ${toPropValue('background-color', variants[variant].pseudoClass.disabled.backgroundColor, theme)}
           }`.replaceAll('\n', ''),
         )
       return styles.join('\n')
     }
   }}
-  ${(props) => toPropValue('font-size', props.fontSize, props.theme)}
-  ${(props) => toPropValue('letter-spacing', props.letterSpacing, props.theme)}
-  ${(props) => toPropValue('line-height', props.lineHeight, props.theme)}
-  ${(props) => toPropValue('color', props.color, props.theme)}
-  ${(props) => toPropValue('background-color', props.backgroundColor, props.theme)}
-  ${(props) => toPropValue('width', props.width, props.theme)}
-  ${(props) => toPropValue('height', props.height, props.theme)}
-  ${(props) => toPropValue('min-width', props.minWidth, props.theme)}
-  ${(props) => toPropValue('min-height', props.minHeight, props.theme)}
-  ${(props) => toPropValue('display', props.display, props.theme)}
-  ${(props) => toPropValue('border', props.border, props.theme)}
-  ${(props) => toPropValue('overflow', props.overflow, props.theme)}
-  ${(props) => toPropValue('margin', props.margin, props.theme)}
-  ${(props) => toPropValue('margin-top', props.marginTop, props.theme)}
-  ${(props) => toPropValue('margin-left', props.marginLeft, props.theme)}
-  ${(props) => toPropValue('margin-bottom', props.marginBottom, props.theme)}
-  ${(props) => toPropValue('margin-right', props.marginRight, props.theme)}
-  ${(props) => toPropValue('padding', props.padding, props.theme)}
-  ${(props) => toPropValue('padding-top', props.paddingTop, props.theme)}
-  ${(props) => toPropValue('padding-left', props.paddingLeft, props.theme)}
-  ${(props) => toPropValue('padding-bottom', props.paddingBottom, props.theme)}
-  ${(props) => toPropValue('padding-right', props.paddingRight, props.theme)}
+  ${props => toPropValue('font-size', props.fontSize, props.theme)}
+  ${props => toPropValue('letter-spacing', props.letterSpacing, props.theme)}
+  ${props => toPropValue('line-height', props.lineHeight, props.theme)}
+  ${props => toPropValue('color', props.color, props.theme)}
+  ${props => toPropValue('background-color', props.backgroundColor, props.theme)}
+  ${props => toPropValue('width', props.width, props.theme)}
+  ${props => toPropValue('height', props.height, props.theme)}
+  ${props => toPropValue('min-width', props.minWidth, props.theme)}
+  ${props => toPropValue('min-height', props.minHeight, props.theme)}
+  ${props => toPropValue('display', props.display, props.theme)}
+  ${props => toPropValue('border', props.border, props.theme)}
+  ${props => toPropValue('overflow', props.overflow, props.theme)}
+  ${props => toPropValue('margin', props.margin, props.theme)}
+  ${props => toPropValue('margin-top', props.marginTop, props.theme)}
+  ${props => toPropValue('margin-left', props.marginLeft, props.theme)}
+  ${props => toPropValue('margin-bottom', props.marginBottom, props.theme)}
+  ${props => toPropValue('margin-right', props.marginRight, props.theme)}
+  ${props => toPropValue('padding', props.padding, props.theme)}
+  ${props => toPropValue('padding-top', props.paddingTop, props.theme)}
+  ${props => toPropValue('padding-left', props.paddingLeft, props.theme)}
+  ${props => toPropValue('padding-bottom', props.paddingBottom, props.theme)}
+  ${props => toPropValue('padding-right', props.paddingRight, props.theme)}
   &:hover {
-    ${(props) =>
-      toPropValue(
-        'background-color',
-        props?.pseudoClass?.hover?.backgroundColor,
-      )}
+    ${props => toPropValue('background-color', props?.pseudoClass?.hover?.backgroundColor)}
   }
   &:disabled {
-    ${(props) =>
-      toPropValue(
-        'background-color',
-        props?.pseudoClass?.disabled?.backgroundColor,
-      )}
+    ${props => toPropValue('background-color', props?.pseudoClass?.disabled?.backgroundColor)}
   }
   cursor: pointer;
   outline: 0;

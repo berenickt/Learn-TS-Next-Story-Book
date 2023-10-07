@@ -2,10 +2,7 @@ import { ComponentMeta } from '@storybook/react'
 import React, { useEffect } from 'react'
 import Header from './index'
 import { AuthContextProvider } from 'contexts/AuthContext'
-import {
-  ShoppingCartContextProvider,
-  useShoppingCartContext,
-} from 'contexts/ShoppingCartContext'
+import { ShoppingCartContextProvider, useShoppingCartContext } from 'contexts/ShoppingCartContext'
 
 export default { title: 'organisms/Header' } as ComponentMeta<typeof Header>
 
@@ -38,16 +35,13 @@ export const Login = () => {
       })
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    
+
     return <Header />
   }
 
   return (
     <ShoppingCartContextProvider>
-      <AuthContextProvider
-        context={{ apiRootUrl: 'https://dummy' }}
-        authUser={authUser}
-      >
+      <AuthContextProvider context={{ apiRootUrl: 'https://dummy' }} authUser={authUser}>
         <ChildComponent />
       </AuthContextProvider>
     </ShoppingCartContextProvider>

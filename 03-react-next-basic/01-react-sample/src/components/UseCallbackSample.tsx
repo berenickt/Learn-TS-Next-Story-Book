@@ -35,14 +35,14 @@ const Parent = () => {
   const [count, setCount] = useState(0)
 
   const decrement = () => {
-    setCount((c) => c - 1)
+    setCount(c => c - 1)
   }
   const increment = () => {
-    setCount((c) => c + 1)
+    setCount(c => c + 1)
   }
   // useCallback을 사용해 함수를 메모이제이션한다
   const double = useCallback(() => {
-    setCount((c) => c * 2)
+    setCount(c => c * 2)
     // 두 번째 인수는 빈 배열이므로, useCallback은 항상 같은 함수를 반환한다
   }, [])
 

@@ -13,7 +13,5 @@ export default {
   },
 } as ComponentMeta<typeof SigninForm>
 
-const Template: ComponentStory<typeof SigninForm> = (args) => (
-  <SigninForm {...args} />
-)
+const Template: ComponentStory<typeof SigninForm> = args => <SigninForm {...args} />
 export const Form = Template.bind({})

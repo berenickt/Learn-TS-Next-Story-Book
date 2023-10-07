@@ -35,7 +35,7 @@ export default {
   },
 } as ComponentMeta<typeof SearchIcon>
 
-const Template: ComponentStory<typeof SearchIcon> = (args) => (
+const Template: ComponentStory<typeof SearchIcon> = args => (
   <>
     <SearchIcon {...args} />
     <CloudUploadIcon {...args} />

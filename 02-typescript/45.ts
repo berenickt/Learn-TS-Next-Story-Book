@@ -2,7 +2,7 @@ enum Direction {
   Up = 'UP',
   Down = 'DOWN',
   Left = 'LEFT',
-  Right = 'RIGHT'
+  Right = 'RIGHT',
 }
 
 // 예를 들어, API의 파라미터로 문자열이 전달된 경우를 가정한다

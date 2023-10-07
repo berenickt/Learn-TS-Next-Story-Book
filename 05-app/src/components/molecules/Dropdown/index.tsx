@@ -14,9 +14,7 @@ const DropdownControl = styled.div<{ hasError?: boolean }>`
   overflow: hidden;
   background-color: #ffffff;
   border: ${({ theme, hasError }) =>
-    hasError
-      ? `1px solid ${theme.colors.danger}`
-      : `1px solid ${theme.colors.border}`};
+    hasError ? `1px solid ${theme.colors.danger}` : `1px solid ${theme.colors.border}`};
   border-radius: 5px;
   box-sizing: border-box;
   cursor: default;
@@ -38,10 +36,7 @@ const DropdownPlaceholder = styled.div`
 
 // 드롭다운 화살표의 형태
 const DropdownArrow = styled.div<{ isOpen?: boolean }>`
-  border-color: ${({ isOpen }) =>
-    isOpen
-      ? 'transparent transparent #222222;'
-      : '#222222 transparent transparent'};
+  border-color: ${({ isOpen }) => (isOpen ? 'transparent transparent #222222;' : '#222222 transparent transparent')};
   border-width: ${({ isOpen }) => (isOpen ? '0 5px 5px' : '5px 5px 0;')};
   border-style: solid;
   content: ' ';
@@ -57,8 +52,10 @@ const DropdownArrow = styled.div<{ isOpen?: boolean }>`
 const DropdownMenu = styled.div`
   background-color: #ffffff;
   border: ${({ theme }) => theme.colors.border};
-  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
-    0px 8px 10px 1px rgb(0 0 0 / 10%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+  box-shadow:
+    0px 5px 5px -3px rgb(0 0 0 / 20%),
+    0px 8px 10px 1px rgb(0 0 0 / 10%),
+    0px 3px 14px 2px rgb(0 0 0 / 12%);
   box-sizing: border-box;
   border-radius: 5px;
   margin-top: -1px;
@@ -130,7 +127,7 @@ interface DropdownProps {
  */
 const Dropdown = (props: DropdownProps) => {
   const { onChange, name, value, options, hasError } = props
-  const initialItem = options.find((i) => i.value === value)
+  const initialItem = options.find(i => i.value === value)
   const [isOpen, setIsOpenValue] = useState(false)
   const [selectedItem, setSelectedItem] = useState(initialItem)
   const dropdownRef = useRef<HTMLDivElement>(null)
@@ -154,14 +151,11 @@ const Dropdown = (props: DropdownProps) => {
   )
 
   const handleMouseDown = (e: React.SyntheticEvent) => {
-    setIsOpenValue((isOpen) => !isOpen)
+    setIsOpenValue(isOpen => !isOpen)
     e.stopPropagation()
   }
 
-  const handleSelectValue = (
-    e: React.FormEvent<HTMLDivElement>,
-    item: DropdownItem,
-  ) => {
+  const handleSelectValue = (e: React.FormEvent<HTMLDivElement>, item: DropdownItem) => {
     e.stopPropagation()
 
     setSelectedItem(item)
@@ -196,9 +190,7 @@ const Dropdown = (props: DropdownProps) => {
           </DropdownValue>
         )}
         {/* 何も選択されてない時はプレースホルダーを表示 */}
-        {!selectedItem && (
-          <DropdownPlaceholder>{props?.placeholder}</DropdownPlaceholder>
-        )}
+        {!selectedItem && <DropdownPlaceholder>{props?.placeholder}</DropdownPlaceholder>}
         {/* ダミーinput */}
         <input
           type="hidden"
@@ -214,8 +206,8 @@ const Dropdown = (props: DropdownProps) => {
           {props.options.map((item, idx) => (
             <DropdownOption
               key={idx}
-              onMouseDown={(e) => handleSelectValue(e, item)}
-              onClick={(e) => handleSelectValue(e, item)}
+              onMouseDown={e => handleSelectValue(e, item)}
+              onClick={e => handleSelectValue(e, item)}
               data-testid="dropdown-option"
             >
               <DropdownItem item={item} />

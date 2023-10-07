@@ -10,9 +10,7 @@ jest.mock('contexts/ShoppingCartContext')
 // eslint-disable-next-line import/order
 import { useShoppingCartContext } from 'contexts/ShoppingCartContext'
 // 오리지널 ShoppingCartContextProvider를 취득
-const { ShoppingCartContextProvider } = jest.requireActual(
-  'contexts/ShoppingCartContext',
-)
+const { ShoppingCartContextProvider } = jest.requireActual('contexts/ShoppingCartContext')
 
 // 더미 사용자
 const authUser: User = {
@@ -39,8 +37,7 @@ const product: Product = {
 
 describe('Header', () => {
   let renderResult: RenderResult
-  const useShoppingCartContextMock =
-    useShoppingCartContext as jest.MockedFunction<typeof useShoppingCartContext>
+  const useShoppingCartContextMock = useShoppingCartContext as jest.MockedFunction<typeof useShoppingCartContext>
 
   it('카트에 상품이 존재한다', async () => {
     useShoppingCartContextMock.mockReturnValue({
@@ -54,10 +51,7 @@ describe('Header', () => {
     renderResult = render(
       <ThemeProvider theme={theme}>
         <ShoppingCartContextProvider>
-          <AuthContextProvider
-            authUser={authUser}
-            context={{ apiRootUrl: 'https://dummy' }}
-          >
+          <AuthContextProvider authUser={authUser} context={{ apiRootUrl: 'https://dummy' }}>
             <Header />
           </AuthContextProvider>
         </ShoppingCartContextProvider>

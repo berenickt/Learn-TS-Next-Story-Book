@@ -10,9 +10,9 @@ type ButtonProps = {
 // 타입 인수에 props 타입을 전달한다
 const Button = styled.button<ButtonProps>`
   /* color, background, border-colorはpropsから渡す */
-  color: ${(props) => props.color};
-  background: ${(props) => props.backgroundColor};
-  border: 2px solid ${(props) => props.color};
+  color: ${props => props.color};
+  background: ${props => props.backgroundColor};
+  border: 2px solid ${props => props.color};
 
   font-size: 2em;
   margin: 1em;

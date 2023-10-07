@@ -53,7 +53,7 @@ export default {
   },
 } as ComponentMeta<typeof Dropzone>
 
-const Template: ComponentStory<typeof Dropzone> = (args) => {
+const Template: ComponentStory<typeof Dropzone> = args => {
   const [files, setFiles] = useState<File[]>([])
   const handleDrop = (files: File[]) => {
     setFiles(files)
@@ -91,12 +91,7 @@ const Template: ComponentStory<typeof Dropzone> = (args) => {
       <Box>
         {files.map((f, i) => (
           // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={URL.createObjectURL(f)}
-            width="100px"
-            key={i}
-            alt="sample"
-          />
+          <img src={URL.createObjectURL(f)} width="100px" key={i} alt="sample" />
         ))}
       </Box>
     </>

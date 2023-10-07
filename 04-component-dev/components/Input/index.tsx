@@ -20,7 +20,7 @@ export const Input = (props: InputProps) => {
   return (
     <div>
       <label htmlFor={props.id}>{label}</label>
-      <input {...rest} type='text' value={text} onChange={onInputChange} />
+      <input {...rest} type="text" value={text} onChange={onInputChange} />
       <button onClick={resetInputField}>Reset</button>
     </div>
   )

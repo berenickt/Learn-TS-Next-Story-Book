@@ -44,7 +44,7 @@ const SpinnerWrapper = styled.div`
   z-index: 1199;
 `
 
-const Template: ComponentStory<typeof Spinner> = (args) => (
+const Template: ComponentStory<typeof Spinner> = args => (
   <SpinnerWrapper>
     <Spinner {...args} />
   </SpinnerWrapper>

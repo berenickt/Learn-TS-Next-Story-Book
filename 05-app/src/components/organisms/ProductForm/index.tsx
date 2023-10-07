@@ -53,12 +53,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
           name="image"
           rules={{ required: true }}
           render={({ field: { onChange, value }, fieldState: { error } }) => (
-            <InputImages
-              images={value ?? []}
-              onChange={onChange}
-              maximumNumber={1}
-              hasError={!!error}
-            />
+            <InputImages images={value ?? []} onChange={onChange} maximumNumber={1} hasError={!!error} />
           )}
         />
         {errors.image && (
@@ -102,11 +97,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
             name="description"
             rules={{ required: true }}
             render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <TextArea
-                placeholder="최고의 상품입니다!"
-                hasError={!!error}
-                onChange={onChange}
-              >
+              <TextArea placeholder="최고의 상품입니다!" hasError={!!error} onChange={onChange}>
                 {value}
               </TextArea>
             )}
@@ -137,7 +128,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
                 hasError={!!error}
                 value={value}
                 placeholder="카테고리를 선택해 주십시오"
-                onChange={(v) => onChange(v?.value)}
+                onChange={v => onChange(v?.value)}
               />
             )}
           />
@@ -166,7 +157,7 @@ const ProductForm = ({ onProductSave }: ProductFormProps) => {
                 hasError={!!error}
                 value={value ?? 'used'}
                 placeholder="Please select condition"
-                onChange={(v) => onChange(v?.value)}
+                onChange={v => onChange(v?.value)}
               />
             )}
           />

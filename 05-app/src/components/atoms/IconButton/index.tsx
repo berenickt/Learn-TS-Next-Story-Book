@@ -54,21 +54,14 @@ export interface IconButtonProps {
 /**
  * 아이콘 버튼
  */
-function withIconStyle(
-  Icon: typeof SvgIcon,
-): React.ComponentType<IconButtonProps> {
+function withIconStyle(Icon: typeof SvgIcon): React.ComponentType<IconButtonProps> {
   const IconWithStyle = (props: IconButtonProps) => {
     const { onClick, className, size = 24, ...rest } = props
     const cursor = onClick ? 'pointer' : ''
 
     return (
       <IconWrapper cursor={cursor} size={size} {...rest}>
-        <Icon
-          className={className}
-          fontSize="inherit"
-          color="inherit"
-          onClick={onClick}
-        />
+        <Icon className={className} fontSize="inherit" color="inherit" onClick={onClick} />
       </IconWrapper>
     )
   }

@@ -1,14 +1,10 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
-import {
-  CheckBoxOutlineBlankIcon,
-  CheckBoxIcon,
-} from 'components/atoms/IconButton'
+import { CheckBoxOutlineBlankIcon, CheckBoxIcon } from 'components/atoms/IconButton'
 import Text from 'components/atoms/Text'
 import Flex from 'components/layout/Flex'
 
-export interface CheckBoxProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'defaultValue'> {
+export interface CheckBoxProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'defaultValue'> {
   /**
    * 표시 라벨
    */
@@ -37,7 +33,7 @@ const CheckBox = (props: CheckBoxProps) => {
       e.preventDefault()
       // 체크 박수를 강제로 클릭
       ref.current?.click()
-      setIsChecked((isChecked) => !isChecked)
+      setIsChecked(isChecked => !isChecked)
     },
     [ref, setIsChecked],
   )

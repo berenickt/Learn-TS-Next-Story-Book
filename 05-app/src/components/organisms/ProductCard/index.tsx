@@ -47,13 +47,7 @@ const ProductCardInfo = styled.div`
 /**
  * 상품 카드
  */
-const ProductCard = ({
-  title,
-  price,
-  imageUrl,
-  blurDataUrl,
-  variant = 'listing',
-}: ProductCardProps) => {
+const ProductCard = ({ title, price, imageUrl, blurDataUrl, variant = 'listing' }: ProductCardProps) => {
   const { size, imgSize } = (() => {
     switch (variant) {
       case 'detail':

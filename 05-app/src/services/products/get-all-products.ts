@@ -41,22 +41,13 @@ export type GetAllProductsParams = {
 // eslint-disable-next-line complexity
 const getAllProducts = async (
   context: ApiContext,
-  {
-    category,
-    conditions,
-    userId,
-    page,
-    limit,
-    sort = 'id',
-    order = 'desc',
-  }: GetAllProductsParams = {},
+  { category, conditions, userId, page, limit, sort = 'id', order = 'desc' }: GetAllProductsParams = {},
 ): Promise<Product[]> => {
   const path = `${context.apiRootUrl.replace(/\/$/g, '')}/products`
   const params = new URLSearchParams()
 
   category && params.append('category', category)
-  conditions &&
-    conditions.forEach((condition) => params.append('condition', condition))
+  conditions && conditions.forEach(condition => params.append('condition', condition))
   userId && params.append('owner.id', `${userId}`)
   page && params.append('_page', `${page}`)
   limit && params.append('_limit', `${limit}`)

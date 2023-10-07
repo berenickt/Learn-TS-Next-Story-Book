@@ -1,10 +1,4 @@
-import {
-  render,
-  screen,
-  act,
-  fireEvent,
-  RenderResult,
-} from '@testing-library/react'
+import { render, screen, act, fireEvent, RenderResult } from '@testing-library/react'
 import { ThemeProvider } from 'styled-components'
 import Dropdown from '.'
 import { theme } from 'themes'

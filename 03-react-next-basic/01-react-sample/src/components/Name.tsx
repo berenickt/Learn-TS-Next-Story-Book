@@ -13,9 +13,9 @@ const Name = () => {
   return (
     // style 객체의 키는 캐멀 케이스가 된다
     <div style={{ padding: '16px', backgroundColor: 'grey' }}>
-      {/* for 대신에 htmlFor를 사용한다 */}　<label htmlFor='name'>名前</label>
+      {/* for 대신에 htmlFor를 사용한다 */}　<label htmlFor="name">名前</label>
       {/* class나 onchange 대신, className이나 onChange를 사용한다 */}
-      　<input id='name' className='input-name' type='text' onChange={onChange} />
+      　<input id="name" className="input-name" type="text" onChange={onChange} />
     </div>
   )
 }

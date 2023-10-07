@@ -9,10 +9,7 @@ type AuthContextType = {
   isLoading: boolean
   signin: (username: string, password: string) => Promise<void>
   signout: () => Promise<void>
-  mutate: (
-    data?: User | Promise<User>,
-    shouldRevalidate?: boolean,
-  ) => Promise<User | undefined>
+  mutate: (data?: User | Promise<User>, shouldRevalidate?: boolean) => Promise<User | undefined>
 }
 
 type AuthContextProviderProps = {
@@ -28,8 +25,7 @@ const AuthContext = React.createContext<AuthContextType>({
   mutate: async () => Promise.resolve(undefined),
 })
 
-export const useAuthContext = (): AuthContextType =>
-  useContext<AuthContextType>(AuthContext)
+export const useAuthContext = (): AuthContextType => useContext<AuthContextType>(AuthContext)
 
 /**
  * 인증 컨텍스트 제공자
@@ -40,9 +36,7 @@ export const AuthContextProvider = ({
   authUser,
   children,
 }: React.PropsWithChildren<AuthContextProviderProps>) => {
-  const { data, error, mutate } = useSWR<User>(
-    `${context.apiRootUrl.replace(/\/$/g, '')}/users/me`,
-  )
+  const { data, error, mutate } = useSWR<User>(`${context.apiRootUrl.replace(/\/$/g, '')}/users/me`)
   const isLoading = !data && !error
 
   // 로그인

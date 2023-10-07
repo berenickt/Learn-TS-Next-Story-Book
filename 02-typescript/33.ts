@@ -1,3 +1,3 @@
 type Label = {
-  [key: string] : string
+  [key: string]: string
 }

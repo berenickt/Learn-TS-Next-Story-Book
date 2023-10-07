@@ -22,21 +22,15 @@ export type SigninParams = {
  * @param params 파라미터
  * @returns 로그인 사용자
  */
-const signin = async (
-  context: ApiContext,
-  params: SigninParams,
-): Promise<User> => {
-  return await fetcher(
-    `${context.apiRootUrl.replace(/\/$/g, '')}/auth/signin`,
-    {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(params),
+const signin = async (context: ApiContext, params: SigninParams): Promise<User> => {
+  return await fetcher(`${context.apiRootUrl.replace(/\/$/g, '')}/auth/signin`, {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
-  )
+    body: JSON.stringify(params),
+  })
 }
 
 export default signin

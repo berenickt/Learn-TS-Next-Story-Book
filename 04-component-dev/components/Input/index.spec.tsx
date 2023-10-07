@@ -7,7 +7,7 @@ describe('Input', () => {
 
   // 각 테스트 케이스 이전에 컴포넌트를 그리고, renderResult에 설정한다
   beforeEach(() => {
-    renderResult = render(<Input id='username' label='Username' />)
+    renderResult = render(<Input id="username" label="Username" />)
   })
 
   // 테스트 케이스 실행 후에 그리던 컴포넌트를 릴리스한다

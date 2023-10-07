@@ -14,10 +14,7 @@ export type PurchaseParams = {
  * @param params 상품 ID
  * @returns 구입 결과의 메시지
  */
-const purchase = async (
-  context: ApiContext,
-  params: PurchaseParams,
-): Promise<{ message: string }> => {
+const purchase = async (context: ApiContext, params: PurchaseParams): Promise<{ message: string }> => {
   return await fetcher(`${context.apiRootUrl.replace(/\/$/g, '')}/purchases`, {
     method: 'POST',
     headers: {

@@ -21,7 +21,7 @@ const Container = (props: ContainerProps): JSX.Element => {
 const Parent = (): JSX.Element => {
   return (
     // Container를 사용할 때, 다른 요소를 감싸서 사용한다
-    <Container title='Hello'>
+    <Container title="Hello">
       <p>이 부분은 배경색으로 둘러 싸여 있습니다.</p>
     </Container>
   )

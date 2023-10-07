@@ -52,9 +52,7 @@ export default {
   },
 } as ComponentMeta<typeof TextArea>
 
-const Template: ComponentStory<typeof TextArea> = (args) => (
-  <TextArea {...args} />
-)
+const Template: ComponentStory<typeof TextArea> = args => <TextArea {...args} />
 
 export const Normal = Template.bind({})
 

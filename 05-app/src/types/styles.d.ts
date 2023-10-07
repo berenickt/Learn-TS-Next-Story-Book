@@ -14,29 +14,13 @@ export type Responsive<T> = T | ResponsiveProp<T>
 /**
  * Flex
  */
-type SelfPosition =
-  | 'center'
-  | 'end'
-  | 'flex-end'
-  | 'flex-start'
-  | 'self-end'
-  | 'self-start'
-  | 'start'
+type SelfPosition = 'center' | 'end' | 'flex-end' | 'flex-start' | 'self-end' | 'self-start' | 'start'
 
 type ContentPosition = 'center' | 'end' | 'flex-end' | 'flex-start' | 'start'
 
-type ContentDistribution =
-  | 'space-around'
-  | 'space-between'
-  | 'space-evenly'
-  | 'stretch'
+type ContentDistribution = 'space-around' | 'space-between' | 'space-evenly' | 'stretch'
 
-type CSSPropertyGlobals =
-  | '-moz-initial'
-  | 'inherit'
-  | 'initial'
-  | 'revert'
-  | 'unset'
+type CSSPropertyGlobals = '-moz-initial' | 'inherit' | 'initial' | 'revert' | 'unset'
 
 export type CSSPropertyAlignItems =
   | CSSPropertyGlobals
@@ -79,18 +63,9 @@ export type CSSPropertyJustifyContent =
   | 'right'
   | (string & {})
 
-export type CSSPropertyFlexWrap =
-  | CSSPropertyGlobals
-  | 'nowrap'
-  | 'wrap'
-  | 'wrap-reverse'
+export type CSSPropertyFlexWrap = CSSPropertyGlobals | 'nowrap' | 'wrap' | 'wrap-reverse'
 
-export type CSSPropertyFlexDirection =
-  | CSSPropertyGlobals
-  | 'column'
-  | 'column-reverse'
-  | 'row'
-  | 'row-reverse'
+export type CSSPropertyFlexDirection = CSSPropertyGlobals | 'column' | 'column-reverse' | 'row' | 'row-reverse'
 
 export type CSSPropertyJustifySelf =
   | CSSPropertyGlobals
@@ -117,18 +92,10 @@ export type CSSPropertyAlignSelf =
  */
 type GridLine = 'auto' | (string & {})
 
-export type CSSPropertyGridColumn =
-  | CSSPropertyGlobals
-  | GridLine
-  | (string & {})
+export type CSSPropertyGridColumn = CSSPropertyGlobals | GridLine | (string & {})
 
 export type CSSPropertyGridRow = CSSPropertyGlobals | GridLine | (string & {})
 
-export type CSSPropertyGridAutoFlow =
-  | CSSPropertyGlobals
-  | 'column'
-  | 'dense'
-  | 'row'
-  | (string & {})
+export type CSSPropertyGridAutoFlow = CSSPropertyGlobals | 'column' | 'dense' | 'row' | (string & {})
 
 export type CSSPropertyGridArea = CSSPropertyGlobals | GridLine | (string & {})

@@ -13,7 +13,7 @@ const Page: NextPage = () => {
       {/* 파란색 텍스트를 표시 */}
       <Text>World</Text>
       {/* 파란색 링크를 표시 */}
-      <Text as='a' href='/'>
+      <Text as="a" href="/">
         Go to index
       </Text>
     </div>

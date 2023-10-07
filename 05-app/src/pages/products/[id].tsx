@@ -1,10 +1,4 @@
-import type {
-  GetStaticPaths,
-  GetStaticProps,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
-  NextPage,
-} from 'next'
+import type { GetStaticPaths, GetStaticProps, GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import BreadcrumbItem from 'components/atoms/BreadcrumbItem'
@@ -34,10 +28,7 @@ const context: ApiContext = {
 
 type ProductPageProps = InferGetStaticPropsType<typeof getStaticProps>
 
-const ProductPage: NextPage<ProductPageProps> = ({
-  id,
-  product: initial,
-}: ProductPageProps) => {
+const ProductPage: NextPage<ProductPageProps> = ({ id, product: initial }: ProductPageProps) => {
   const router = useRouter()
   // 상품
   const data = useProduct(context, { id, initial })
@@ -83,12 +74,7 @@ const ProductPage: NextPage<ProductPageProps> = ({
             <BreadcrumbItem>{product.title}</BreadcrumbItem>
           </Breadcrumb>
           <Flex paddingTop={2} paddingBottom={1} justifyContent="center">
-            <ProductCard
-              variant="detail"
-              title={product.title}
-              price={product.price}
-              imageUrl={product.imageUrl}
-            />
+            <ProductCard variant="detail" title={product.title} price={product.price} imageUrl={product.imageUrl} />
           </Flex>
           <Separator />
           <Box paddingTop={1}>
@@ -109,28 +95,19 @@ const ProductPage: NextPage<ProductPageProps> = ({
           </Box>
         </Box>
         <Box padding={2} width={{ base: '100%', md: '700px' }}>
-          <Flex
-            justifyContent="space-between"
-            flexDirection="column"
-            height={{ base: '', md: '100%' }}
-          >
+          <Flex justifyContent="space-between" flexDirection="column" height={{ base: '', md: '100%' }}>
             {/* 상품 개요를 표시, 줄바꿈별로 텍스트 컴포넌트로 감싼다 */}
             <Box>
-              {product.description
-                .split('\n')
-                .map((text: string, i: number) => (
-                  <Text key={i} as="p">
-                    {text}
-                  </Text>
-                ))}
+              {product.description.split('\n').map((text: string, i: number) => (
+                <Text key={i} as="p">
+                  {text}
+                </Text>
+              ))}
             </Box>
             {/*
               카트 추가 버튼 컨테이너
               버튼을 눌렀다면 ShoppingCartContext에 상품을 추가한다 */}
-            <AddToCartButtonContainer
-              product={product}
-              onAddToCartButtonClick={handleAddToCartButtonClick}
-            />
+            <AddToCartButtonContainer product={product} onAddToCartButtonClick={handleAddToCartButtonClick} />
           </Flex>
         </Box>
       </Flex>
@@ -144,14 +121,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
   // 상품으로부터 경로를 생성
   const products = await getAllProducts(context)
-  const paths = products.map((p) => `/products/${p.id}`)
+  const paths = products.map(p => `/products/${p.id}`)
 
   return { paths, fallback: true }
 }
 
-export const getStaticProps: GetStaticProps = async ({
-  params,
-}: GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
   const context: ApiContext = {
     apiRootUrl: process.env.API_BASE_URL || 'http://localhost:5000',
   }

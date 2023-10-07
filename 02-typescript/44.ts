@@ -2,7 +2,7 @@ enum Direction {
   Up,
   Down,
   Left,
-  Right
+  Right,
 }
 
 // enum Direction을 참조

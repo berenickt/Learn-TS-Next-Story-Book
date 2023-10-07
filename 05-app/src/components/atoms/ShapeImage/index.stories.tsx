@@ -40,9 +40,7 @@ export default {
   },
 } as ComponentMeta<typeof ShapeImage>
 
-const Template: ComponentStory<typeof ShapeImage> = (args) => (
-  <ShapeImage {...args} />
-)
+const Template: ComponentStory<typeof ShapeImage> = args => <ShapeImage {...args} />
 
 export const Circle = Template.bind({})
 Circle.args = { src: '/images/sample/1.jpg', shape: 'circle' }

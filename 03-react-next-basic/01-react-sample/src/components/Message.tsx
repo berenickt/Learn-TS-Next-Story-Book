@@ -4,7 +4,7 @@ const Text = (props: { content: string }) => {
   // props로부터 content라는 값을 추출한다
   const { content } = props
   // props에 전달된 데이터를 표시한다
-  return <p className='text'>{content}</p>
+  return <p className="text">{content}</p>
 }
 
 // 마찬가지로 정의한 컴포넌트를 Message라는 편수에 대입한다

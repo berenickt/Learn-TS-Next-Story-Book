@@ -1,8 +1,8 @@
 // 비동기 함수를 정의합니다
-function fetchFromServer(id: string): Promise<{success: boolean}> {
+function fetchFromServer(id: string): Promise<{ success: boolean }> {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve({success: true})
+      resolve({ success: true })
     }, 100)
   })
 }
@@ -15,7 +15,7 @@ async function asyncFunc(): Promise<string> {
 }
 
 // await 구문을 사용하기 위해서는 async function 안에서 호출해야 한다
-(async () => {
+;(async () => {
   const result = await asyncFunc()
   console.log(result)
 })()
