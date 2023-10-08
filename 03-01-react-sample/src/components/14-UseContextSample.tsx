@@ -1,5 +1,13 @@
 import React, { useContext } from 'react'
 
+/*** 📌 (2) Context.Consumer
+ * Context.Consumer라는 컴포넌트를 추가해,
+ * 그 자식 요소로 함수를 지정하면 인수로부터 데이터를 참조 가능
+ *
+ * Provider는 중첩 가능하며, 중첩 시 Consumer는 가장 가까운 Provider의 데이터를 얻습니다.
+ * 또한, useContext 훅을 사용하면, Consumer를 사용하지 않고도 Context의 데이터를 참조 가능
+ * 👇 Title 컴포넌트 안에서 Context의 값을 참조
+ */
 type User = {
   id: number
   name: string
