@@ -11,9 +11,9 @@ import reportWebVitals from './reportWebVitals'
 // import Message from './components/03-Message'
 // import ContainerSample from './components/04-ContainerSample'
 // import ContextSample from './components/05-ContextSample'
-import UseStateSample from './components/06-UseStateSample'
+// import UseStateSample from './components/06-UseStateSample'
 // import UseReducerSample from './components/07-UseReducerSample'
-// import MemoSample1 from './components/08-MemoSample1'
+import MemoSample1 from './components/08-MemoSample1'
 // import MemoSample2 from './components/09-MemoSample2'
 // import UseCallbackSample from './components/10-UseCallbackSample'
 // import UseMemoSample from './components/11-UseMemoSample'
@@ -32,9 +32,9 @@ root.render(
   // <Message />
   // <ContainerSample />,
   // <ContextSample />
-  <UseStateSample initialValue={0} />,
+  // <UseStateSample initialValue={0} />,
   // <UseReducerSample initialValue={0} />
-  // <MemoSample1 />
+  <MemoSample1 />,
   // <MemoSample2 />
   // <UseCallbackSample />
   // <UseMemoSample />
