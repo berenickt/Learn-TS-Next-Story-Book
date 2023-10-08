@@ -16,8 +16,8 @@ import reportWebVitals from './reportWebVitals'
 // import MemoSample1 from './components/08-MemoSample1'
 // import MemoSample2 from './components/09-MemoSample2'
 // import UseCallbackSample from './components/10-UseCallbackSample'
-import UseMemoSample from './components/11-UseMemoSample'
-// import UseEffectSample from './components/12-UseEffectSample'
+// import UseMemoSample from './components/11-UseMemoSample'
+import UseEffectSample from './components/12-UseEffectSample'
 // import UseLayoutEffectSample from './components/13-UseLayoutEffectSample'
 // import UseContextSample from './components/14-UseContextSample'
 // import UseRefSample from './components/15-UseRefSample'
@@ -37,8 +37,8 @@ root.render(
   // <MemoSample1 />,
   // <UseCallbackSample />,
   // <MemoSample2 />
-  <UseMemoSample />,
-  // <UseEffectSample />
+  // <UseMemoSample />,
+  <UseEffectSample />,
   // <UseLayoutEffectSample />
   // <UseContextSample />
   // <UseRefSample />
