@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-/*** 📌 (2) Context.Consumer
+/*** 📌 Context.Consumer와 useContext
  * Context.Consumer라는 컴포넌트를 추가해,
  * 그 자식 요소로 함수를 지정하면 인수로부터 데이터를 참조 가능
  *
