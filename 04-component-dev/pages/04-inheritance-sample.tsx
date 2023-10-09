@@ -1,6 +1,10 @@
 import { NextPage } from 'next'
 import styled from 'styled-components'
 
+/** 📌 스타일을 상속
+ * 스타일을 재사용하고 싶을 떄, 어떤 요소의 스타일을 상속하는 것도 유용함
+ */
+
 // 파란색 굵은 문자를 표시하는 컴포넌트
 const Text = styled.p`
   color: blue;

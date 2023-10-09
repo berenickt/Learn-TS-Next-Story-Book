@@ -6,10 +6,12 @@ type ButtonProps = {
   backgroundColor: string
 }
 
-// 문자 색상과 배경 색상을 props로 변경할 수 있는 버튼 컴포넌트
-// 타입 인수에 props 타입을 전달한다
+/** 📌 props로 외부로부터 스타일을 제어
+ * 문자 색상과 배경 색상을 props로 변경할 수 있는 버튼 컴포넌트
+ * 타입 인수에 props 타입을 전달한다
+ */
 const Button = styled.button<ButtonProps>`
-  /* color, background, border-colorはpropsから渡す */
+  /* color, background, border-color는 props에서 전달한다 */
   color: ${props => props.color};
   background: ${props => props.backgroundColor};
   border: 2px solid ${props => props.color};
