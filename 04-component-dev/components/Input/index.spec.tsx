@@ -1,31 +1,41 @@
 import { render, screen, RenderResult, fireEvent, getByRole } from '@testing-library/react'
 import { Input } from './index'
 
-// describe로 처리를 모은다
+/**
+ * describe () 사용하면 테스트를 모을 수 있습니다
+ * 여기서는 Input이라는 이름 그룹을 작성하고 그 안에 테스트를 작성합니다
+ */
 describe('Input', () => {
   let renderResult: RenderResult
 
-  // 각 테스트 케이스 이전에 컴포넌트를 그리고, renderResult에 설정한다
+  /***
+   * beforeEach(), afterEach()는 각 테스트 실행 전과 실행 후의 처리를 기술합니다
+   * 여기서는 테스트 대상 컴포넌트를 테스전에 화면에 그리고, renderResult에 설정한다
+   */
   beforeEach(() => {
     renderResult = render(<Input id="username" label="Username" />)
   })
 
-  // 테스트 케이스 실행 후에 그리던 컴포넌트를 릴리스한다
+  /***
+   * 테스트 케이스 실행 후에, unmount()를 호출해 그리던 컴포넌트를 릴리스한다
+   */
   afterEach(() => {
     renderResult.unmount()
   })
 
-  // 초기 그리기 시에 input 요소가 비어있는 것을 테스트
-  it('should empty in input on initial render', () => {
+  /***
+   * screen.getByLabelText를 사용해,
+   * 화면에 그려지지 않은 DOM으로부터 지정한 이름의 랍레에 대응하는 input얻음
+   */
+  it('초기 렌더링 시 input 요소가 비어있어야 한다', () => {
     // label이 Username인 컴포넌트에 대응하는 input의 요소를 얻는다
     const inputNode = screen.getByLabelText('Username') as HTMLInputElement
 
-    // input 요쇼 표시가 비었는지 확인한다
+    // input 요쇼 표시가 비었는지 확인
     expect(inputNode).toHaveValue('')
   })
 
-  // 문자를 입력하면, 입력한 내용이 표시되는 것을 테스트
-  it('should show input text', () => {
+  it('문자를 입력하면, 입력한 내용이 표시되어야 한다', () => {
     const inputText = 'Test Input Text'
     const inputNode = screen.getByLabelText('Username') as HTMLInputElement
 
@@ -36,8 +46,7 @@ describe('Input', () => {
     expect(inputNode).toHaveValue(inputText)
   })
 
-  // 버튼이 클릭되었다면 입력 텍스트가 삭제되는지 확인
-  it('should reset when user clicks button', () => {
+  it('사용자가 버튼을 클릭할 때, 입력 텍스트가 삭제되어야 한다', () => {
     // 처음에 input에 텍스트를 입력한다
     const inputText = 'Test Input Text'
     const inputNode = screen.getByLabelText('Username') as HTMLInputElement
@@ -47,6 +56,7 @@ describe('Input', () => {
     const buttonNode = screen.getByRole('button', {
       name: 'Reset',
     }) as HTMLButtonElement
+
     // 버튼을 클릭한다
     fireEvent.click(buttonNode)
 
