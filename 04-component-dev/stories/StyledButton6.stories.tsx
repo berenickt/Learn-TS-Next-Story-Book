@@ -2,6 +2,10 @@ import { ComponentMeta } from '@storybook/react'
 import { StyledButton } from '../components/StyledButton'
 import { linkTo } from '@storybook/addon-links'
 
+/*** 📌 (6) linkTo를 사용한 스토리 간 이동
+ * @storybook/addon-links에서는 스토리상에서 다른 스토리로 이동하기 위한 링크 기능을 추가함
+ * linkTo 함수에 이동하고자 하는 스토리의 경로를 지정해서 호출함으로써, 다른 스토리로 전환 가능함
+ */
 export default {
   title: 'StyledButton (6) - Link를 사용한다',
   component: StyledButton,

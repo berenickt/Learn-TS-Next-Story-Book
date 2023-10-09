@@ -1,18 +1,18 @@
 import { ComponentMeta } from '@storybook/react'
 import { StyledButton } from '../components/StyledButton'
 
-// 파일 안의 Story의 설정(메타 데이터 객체)
+/*** 📌 (1) 스토리북 기본 사용법
+ * 파일 안의 Story의 설정(메타 데이터 객체)
+ */
 export default {
-  // 그룹명
-  title: 'StyledButton (1)',
-  // 사용하는 컴포넌트
-  component: StyledButton,
+  title: 'StyledButton (1)', // 그룹명
+  component: StyledButton, // 사용하는 컴포넌트
 } as ComponentMeta<typeof StyledButton>
 
 export const Primary = props => {
   return (
     <StyledButton {...props} variant="primary">
-      Primary
+      메인
     </StyledButton>
   )
 }
@@ -20,7 +20,7 @@ export const Primary = props => {
 export const Success = props => {
   return (
     <StyledButton {...props} variant="success">
-      Primary
+      성공
     </StyledButton>
   )
 }
@@ -28,7 +28,7 @@ export const Success = props => {
 export const Transparent = props => {
   return (
     <StyledButton {...props} variant="transparent">
-      Transparent
+      투명
     </StyledButton>
   )
 }
