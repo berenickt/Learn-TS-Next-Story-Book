@@ -13,6 +13,7 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "import/order": [2, { "alphabetize": { "order": "asc" } }],
+    "import/no-unresolved": "off",
     "prettier/prettier": [
       "off",
       {
@@ -24,5 +25,10 @@
         "tabWidth": 2
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }
