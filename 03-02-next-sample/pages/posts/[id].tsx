@@ -12,8 +12,8 @@ const Post: NextPage<PostProps> = props => {
   const { id } = props
   const router = useRouter()
 
+  // 폴백 페이지용 표시를 반환한다
   if (router.isFallback) {
-    // 폴백 페이지용 표시를 반환한다
     return <div>Loading...</div>
   }
 
@@ -31,8 +31,10 @@ const Post: NextPage<PostProps> = props => {
   )
 }
 
-// getStaticPaths는 생성한 페이지의 경로 파라미터의 조합을 반환한다
-// 이 파일은 pages/posts/[id].tsx이므로, 경로 파라미터로서 id의 값을 반환해야 한다
+/***
+ * getStaticPaths는 생성한 페이지의 경로 파라미터의 조합을 반환한다
+ * 이 파일은 pages/posts/[id].tsx이므로, 경로 파라미터로서 id의 값을 반환해야 한다
+ */
 export const getStaticPaths: GetStaticPaths = async () => {
   // 각 페이지의 경로 파라미터를 모은 것
   const paths = [
@@ -62,7 +64,9 @@ interface PostParams extends ParsedUrlQuery {
   id: string
 }
 
-// getStaticPaths 실행 후에 각 경로에 대해 getStaticProps가 실행된다
+/**
+ * getStaticPaths 실행 후에 각 경로에 대해 getStaticProps가 실행된다
+ */
 export const getStaticProps: GetStaticProps<PostProps, PostParams> = async context => {
   return {
     props: {

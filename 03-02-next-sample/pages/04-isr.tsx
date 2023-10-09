@@ -12,8 +12,8 @@ const ISR: NextPage<ISRProps> = props => {
 
   const router = useRouter()
 
+  // 폴백용 페이지를 반환한다
   if (router.isFallback) {
-    // 폴백용 페이지를 반환한다
     return <div>Loading...</div>
   }
 

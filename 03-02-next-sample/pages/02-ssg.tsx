@@ -6,9 +6,13 @@ type SSGProps = {
   message: string
 }
 
-// SSG는 getStaticProps가 반환한 props를 받을 수 있다
-// NextPage<SSGProps>는 Message: string 만을 받아 생성된 페이지 타입
-// Next.js의 페이지 컴포넌트나 함수 타입은 https://nextjs.org/learn/excel/typescript/nextjs-types도 참고한다
+/** 📌 NextPage : Page를 위한 타입
+ * 받을 props를 결정하고, `NextPage<Props>` 형태로 지정합니다
+ * SSG는 getStaticProps가 반환한 props를 받을 수 있다
+ * NextPage<SSGProps>는 Message: string 만을 받아 생성된 페이지 타입
+ * Next.js의 페이지 컴포넌트나 함수 타입은 아래 링크 참조
+ * @see https://nextjs.org/learn/excel/typescript/nextjs-types
+ */
 const SSG: NextPage<SSGProps> = props => {
   const { message } = props
 
@@ -25,9 +29,11 @@ const SSG: NextPage<SSGProps> = props => {
     </div>
   )
 }
-
-// getStaticProps는 빌드에 실행된다
-// GetStaticProps<SSGProps>는 SSGProps인수로 받는 getSTaticProps 타입
+/**
+ * getStaticProps()라는 함수를 정의하고 export하면, 해당 함수는 빌드 시 실행된다
+ * getStaticProps는 반환값으로 props를 반환하며, 그 값이 페이지 컴포넌트에 전달되어 그려짐
+ * GetStaticProps<SSGProps>는 SSGProps인수로 받는 getSTaticProps 타입
+ */
 export const getStaticProps: GetStaticProps<SSGProps> = async context => {
   const timestamp = new Date().toLocaleString()
   const message = `${timestamp}에 getStaticProps가 실행되었습니다`
